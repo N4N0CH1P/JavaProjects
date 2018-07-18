@@ -12,7 +12,7 @@ public class Person {
 		super();
 	}
 
-	public Person(int age, char sex, String name, double height, double weight, Location birthPlace,
+	public Person(int age, char sex, String firstName, String lastName, double height, double weight, Location birthPlace,
 			Location residence) {
 		super();
 		this.age = age;
@@ -39,6 +39,8 @@ public class Person {
 		this.midInitial = midInitial;
 	}
 
+	
+	
 	public int getAge() {
 		return age;
 	}
@@ -55,12 +57,28 @@ public class Person {
 		this.sex = sex;
 	}
 
-	public String getName() {
-		return name;
+	public char getMidInitial() {
+		return midInitial;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMidInitial(char midInitial) {
+		this.midInitial = midInitial;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public double getHeight() {
@@ -94,19 +112,7 @@ public class Person {
 	public void setResidence(Location residence) {
 		this.residence = residence;
 	}
-	
-	private String displaySex() {
-		switch(sex) {
-		case 'm':
-		case 'M':
-			return "Male";
-		case 'f':
-		case 'F':
-			return "Female";
-		default: 
-			return "Other";
-		}
-	}
+
 	public String toString() {
 		return 
 				"\nFull Name: " + this.firstName + " " + this.midInitial + ". " + this.lastName +
