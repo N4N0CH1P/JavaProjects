@@ -1,11 +1,12 @@
 package classes;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public abstract class Student extends Person {
 	private int studentID;
 	private String schoolName;
 	private HashMap<String, Double> classes;
-	
+	private double gpa;
 	public Student() {
 		super();
 		studentID = 0;
@@ -55,6 +56,19 @@ public abstract class Student extends Person {
 	
 	public void signUpClass(String className) {
 		classes.put(className, null);
+	}
+	
+	public void setGpa() {
+		double sum = 0;
+		Iterator<Double> itr = classes.values().iterator();
+		while(itr.hasNext()) {
+			sum += itr.next();
+		}
+		
+		gpa = (sum/classes.size());
+	}
+	public double getGpa() {
+		return gpa;
 	}
 	
 }
